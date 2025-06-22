@@ -41,28 +41,6 @@ This chatbot backend accepts user messages through an HTTP API, stores them secu
 
 Saves a user message.
 
-
-## 📁 Project Structure
-
-'''json
-{
-WhatsApp_Chatbot/
-├── src/
-│   └── main/
-│       ├── java/com/chatbot/whatsappchatbot/
-│       │   ├── controller/MessageController.java
-│       │   ├── service/FirestoreService.java
-│       │   ├── config/FirebaseInitializer.java
-│       │   └── model/Message.java
-│       └── resources/
-│           └── application.properties
-├── Dockerfile
-├── render.yaml
-├── pom.xml
-└── README.md
-}
-
-
 #### ✅ Request Body:
 
 ```json

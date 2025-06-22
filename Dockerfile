@@ -4,8 +4,11 @@ FROM eclipse-temurin:17-jdk
 # Set working directory
 WORKDIR /app
 
-# Copy all project files
+# Copy everything into container
 COPY . .
+
+# Go into the correct subfolder
+WORKDIR /app/WhatsApp_Chatbot
 
 # Build using Maven Wrapper
 RUN ./mvnw clean package

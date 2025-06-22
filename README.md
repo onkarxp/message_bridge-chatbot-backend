@@ -41,16 +41,8 @@ This chatbot backend accepts user messages through an HTTP API, stores them secu
 
 Saves a user message.
 
-#### ✅ Request Body:
 
-```json
-{
-  "sender": "Onkar",
-  "content": "Hello from the other side!"
-}
-
-
-📦 PROJECT STRUCTURE
+## 📁 Project Structure
 
 WhatsApp_Chatbot/
 ├── src/
@@ -66,3 +58,14 @@ WhatsApp_Chatbot/
 ├── render.yaml
 ├── pom.xml
 └── README.md
+
+
+#### ✅ Request Body:
+
+```json
+{
+  "sender": "Onkar",
+  "content": "Hello from the other side!"
+}
+
+

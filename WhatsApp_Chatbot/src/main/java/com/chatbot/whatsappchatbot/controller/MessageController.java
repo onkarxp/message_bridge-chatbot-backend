@@ -1,7 +1,5 @@
 package com.chatbot.whatsappchatbot.controller;
 
-
-
 import com.chatbot.whatsappchatbot.model.Message;
 import com.chatbot.whatsappchatbot.service.FirestoreService;
 import jakarta.validation.Valid;
@@ -19,13 +17,12 @@ public class MessageController {
 
     @PostMapping("/message")
     public String addMessage(@Valid @RequestBody Message message) {
-        System.out.println("📥 Message received: " + message.getSender() + " - " + message.getText());
+        System.out.println("📥 Message received: " + message.getSender() + " - " + message.getContent());
         return firestoreService.saveMessage(message);
     }
+
     @GetMapping("/messages")
     public List<Message> getMessages() {
         return firestoreService.getAllMessages();
     }
-
 }
-

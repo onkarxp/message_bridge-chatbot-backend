@@ -1,7 +1,5 @@
 package com.chatbot.whatsappchatbot.service;
 
-
-
 import com.chatbot.whatsappchatbot.model.Message;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.*;
@@ -24,10 +22,10 @@ public class FirestoreService {
 
             Map<String, Object> data = new HashMap<>();
             data.put("sender", message.getSender());
-            data.put("text", message.getText());
-            data.put("timestamp", message.getTimestamp());
+            data.put("content", message.getContent());
+            data.put("timestamp", new java.util.Date()); // ✅ Set current time automatically
 
-            ApiFuture<DocumentReference> result = db.collection("messages").add(data);
+            ApiFuture<DocumentReference> result = db.collection(COLLECTION_NAME).add(data);
             return "✅ Message saved with ID: " + result.get().getId();
 
         } catch (Exception e) {
@@ -36,11 +34,12 @@ public class FirestoreService {
         }
     }
 
+
     public List<Message> getAllMessages() {
         List<Message> messageList = new ArrayList<>();
         try {
             Firestore db = FirestoreClient.getFirestore();
-            ApiFuture<QuerySnapshot> future = db.collection("messages").get();
+            ApiFuture<QuerySnapshot> future = db.collection(COLLECTION_NAME).get();
             List<QueryDocumentSnapshot> documents = future.get().getDocuments();
 
             for (QueryDocumentSnapshot doc : documents) {
@@ -52,5 +51,4 @@ public class FirestoreService {
         }
         return messageList;
     }
-
 }

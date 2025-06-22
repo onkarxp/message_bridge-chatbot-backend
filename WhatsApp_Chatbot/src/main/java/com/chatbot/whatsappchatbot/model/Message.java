@@ -1,26 +1,24 @@
 package com.chatbot.whatsappchatbot.model;
 
 import jakarta.validation.constraints.NotBlank;
-import java.time.Instant;
+import java.util.Date;
 
 public class Message {
 
     @NotBlank(message = "Sender must not be blank")
     private String sender;
 
-    @NotBlank(message = "Text must not be blank")
-    private String text;
+    @NotBlank(message = "Content must not be blank")
+    private String content; // ✅ make sure it's "content", not "text"
 
-    private Instant timestamp;
+    private Date timestamp;
 
-    public Message() {
-        this.timestamp = Instant.now();
-    }
+    public Message() {}
 
-    public Message(String sender, String text) {
+    public Message(String sender, String content, Date timestamp) {
         this.sender = sender;
-        this.text = text;
-        this.timestamp = Instant.now();
+        this.content = content;
+        this.timestamp = timestamp;
     }
 
     public String getSender() {
@@ -31,19 +29,19 @@ public class Message {
         this.sender = sender;
     }
 
-    public String getText() {
-        return text;
+    public String getContent() {
+        return content;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public Instant getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Instant timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 }

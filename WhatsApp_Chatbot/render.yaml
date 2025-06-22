@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: chatbot-backend
+    env: docker
+    plan: free
+    branch: main
+    repo: https://github.com/onkarxp/message_bridge-chatbot-backend
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true

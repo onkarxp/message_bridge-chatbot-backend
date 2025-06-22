@@ -1,4 +1,4 @@
-# 💬 WhatsApp Chatbot Backend
+# 💬Message-Bridge (WhatsApp) Chatbot Backend
 
 A Spring Boot-based backend service that simulates the core functionality of a WhatsApp-style chatbot. This system is designed to receive and store messages via REST APIs and integrates with Firebase Firestore as its database.
 

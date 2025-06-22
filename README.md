@@ -44,6 +44,8 @@ Saves a user message.
 
 ## 📁 Project Structure
 
+'''json
+{
 WhatsApp_Chatbot/
 ├── src/
 │   └── main/
@@ -58,6 +60,7 @@ WhatsApp_Chatbot/
 ├── render.yaml
 ├── pom.xml
 └── README.md
+}
 
 
 #### ✅ Request Body:
